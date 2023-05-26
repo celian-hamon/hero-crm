@@ -149,7 +149,7 @@ export default {
                         class="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-pink-500 to-purple-500">Hero</span>
                 </a>
             </div>
-            <div class="flex max-w-screen-md flex-wrap">
+            <div class="flex max-w-screen-md flex-wrap my-10">
                 <IncidentCard v-for="incident in incidents" :incident="incident"></IncidentCard>
 
             </div>
@@ -217,10 +217,10 @@ export default {
                     </form>
                 </div>
             </Modal>
-            <SecondaryButton class="my-3" @click="city=true">Create City</SecondaryButton>
+            <SecondaryButton class="mx-3" @click="city=true">Create City</SecondaryButton>
             <Modal :show="city">
                 <div>
-                    <h4 class="pa-4 text-white">Report incident</h4>
+                    <h4 class="font-bold px-4 pt-3 text-white font-size text-2xl">Create City</h4>
                     <form @submit.prevent="createCity">
                         <div class="p-4">
                             <div class="mt-1">

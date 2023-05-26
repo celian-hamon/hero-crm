@@ -11,6 +11,11 @@ const submit = (id) => {
     form.id = id;
     form.put(route('accident.edit'));
 }
+const select = (event,incident,status) => {
+    if (incident === status){
+        event.target.attributes.add('selected');
+    }
+}
 </script>
 
 <template>
@@ -34,7 +39,7 @@ const submit = (id) => {
                             <select
                                 class="shadow-sm focus:ring-red-500 focus:border-red-500 block  sm:text-sm border-gray-300 rounded-md"
                                 @change="submit(incident.id)" name="status" v-model="form.status">
-                                <option :selected="incident.status.id === status.id" v-for="status in statuses" :value="status.id">{{ status.name }}</option>
+                                <option @load="select($event,incident.status.id,status.id)" v-for="status in statuses" :value="status.id">{{ status.name }}</option>
                             </select>
                         </div>
                     </div>

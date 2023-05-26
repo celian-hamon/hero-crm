@@ -17,4 +17,8 @@ class Incident extends Model {
     {
         return $this->BelongsToMany(User::class, 'users_incidents', 'incident_id', 'user_id');
     }
+    public function accidents(): HasMany
+    {
+        return $this->hasMany(Accident::class);
+    }
 }

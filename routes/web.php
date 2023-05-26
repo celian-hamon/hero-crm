@@ -28,7 +28,7 @@ Route::get('/', function () {
         'canRegister' => Route::has('register'),
         'laravelVersion' => Application::VERSION,
         'phpVersion' => PHP_VERSION,
-        'incidents' => Incident::all(),
+        'incidents' => Incident::with('accidents')->get()->toArray(),
         'cities' => City::all(),
     ]);
 });
